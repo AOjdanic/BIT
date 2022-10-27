@@ -75,3 +75,7 @@ console.log(multipleArray[0].indexOf(24));
 
 console.log(multipleArray[2]);
 console.log(multipleArray[2][1]);
+
+
+
+// Ovo je komentar za Aleksu
