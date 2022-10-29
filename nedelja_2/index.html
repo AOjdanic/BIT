@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>forme</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <form action="/" method="get">
+      <label for="name">Name</label>
+      <input type="text" name="user-name" placeholder="Enter your name" />
+      <br />
+      <label for="email">Email</label>
+      <input type="email" name="email" required />
+      <br />
+      <label for="user-nick">user-nick</label>
+
+      <input type="text" name="user-nick" />
+      <br />
+      <label for="age">age </label>
+
+      <input type="number" name="age" />
+      <br />
+      <label for="password">password</label>
+
+      <input type="password" name="password" required minlength="8" />
+      <br />
+      <label for="comment"></label>
+      <textarea name="comment" minlength="10" required rows="10"></textarea>
+      <br />
+      <label for="gender">Gender</label>
+      <input name="gender" type="radio" value="male" id="male" /><label
+        for="male"
+        >Male</label
+      >
+      <input name="gender" type="radio" value="female" id="female" /><label
+        for="female"
+        >Female</label
+      >
+      <br />
+      <label for="favorite-colors">Favorite Colors</label>
+      <input type="checkbox" name="favorite-colors" value="blue" id="blue" />
+      <label for="blue">Blue</label>
+      <input type="checkbox" name="favorite-colors" value="red" id="red" />
+      <label for="red">Red</label>
+      <input type="checkbox" name="favorite-colors" value="green" id="green" />
+      <label for="green">Green</label>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <label for="fav-food">Favoite food</label>
+
+      <select name="fav-food" id="fav-food" multiple size="4">
+        <option value="pizza">Pizza</option>
+        <option value="ice-cream">Ice cream</option>
+        <option value="fries">fries</option>
+        <option value="milk">milk</option>
+        <option value="yoghurt">yoghurt</option>
+      </select>
+      <br />
+      <br />
+      <label for="user-image">Upload your image</label>
+      <input type="file" name="user-image" accept="image/*" />
+      <label for="birthday">Enter your birthday</label>
+      <input type="date" name="birthday" />
+      <button type="submit">Submit</button>
+      <button type="reset">Clear input</button>
+      <button type="button">Pusti muziku</button>
+    </form>
+  </body>
+</html>
