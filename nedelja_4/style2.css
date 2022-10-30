@@ -1,0 +1,58 @@
+* {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.first-paragraph {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.second-paragraph {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: oblique;
+}
+.third-paragraph {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+#firstQuote {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#secondQuote {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#thirdQuote {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+span {
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(./Fira_Sans/FiraSans-Light.ttf);
+}
+.first-paragraph {
+  font-family: "FiraSans";
+}
+
+@font-face {
+  font-family: Trispace;
+  src: url(https://fonts.gstatic.com/s/trispace/v18/Yq65-LKSQC3o56LxxgRrtA6yBqsrXL5GI5KI-IUZVGsxWFIlbCFrkQB-zUug.woff2);
+}
+
+a {
+  font-family: "Trispace";
+}
+
+.paragraf1 {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.paragraf2 {
+  text-transform: lowercase;
+  text-decoration: line-through;
+}
