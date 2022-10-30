@@ -1,0 +1,29 @@
+.first-paragraph {
+  color: rgb(0, 206, 209);
+  background-color: rebeccapurple;
+  opacity: 0.5;
+}
+.second-paragraph {
+  color: #00ced1;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.third-paragraph {
+  color: #00de00;
+  background-color: gold;
+}
+
+.column1 {
+  background-color: aliceblue;
+}
+.column2 {
+  background-color: hotpink;
+}
+.column3 {
+  background-color: crimson;
+}
+.column4 {
+  background-color: blue;
+}
+.column5 {
+  background-color: darkgoldenrod;
+}

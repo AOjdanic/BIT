@@ -1,0 +1,31 @@
+.first-paragraph {
+  letter-spacing: 5px;
+  text-align: left;
+}
+.second-paragraph {
+  line-height: 200%;
+  text-align: right;
+}
+.third-paragraph {
+  text-align: center;
+}
+ul {
+  background-color: orange;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+a {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+a:link {
+  color: red;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: green;
+}
+a:active {
+  color: blue;
+}
