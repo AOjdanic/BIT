@@ -33,7 +33,7 @@ p {
 p {
   margin-right: 20px; /*da li su se ova podesavanja primenila*/
   padding: 0px;
-  display: inline;
+  display: inline-block;
 }
 
 h1 {
