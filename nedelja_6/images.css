@@ -1,0 +1,24 @@
+img {
+  display: block;
+}
+
+.pic1 {
+  height: 200px;
+  float: right;
+}
+
+.pic2 {
+  width: 200px;
+  margin: 0 auto;
+}
+.pic3 {
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+div {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

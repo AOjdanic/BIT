@@ -1,0 +1,19 @@
+/*background do position deo*/
+
+/* body {
+  background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=0.670xw:1.00xh;0.167xw,0&resize=640:*);
+  background-attachment: fixed; 
+}*/
+/*positon deo*/
+/* body {
+  background-image: url(https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFieSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right center;
+} */
+
+body {
+  color: white;
+  background-image: url(https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFieSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80);
+  background-size: cover;
+}

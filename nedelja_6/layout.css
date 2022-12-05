@@ -1,0 +1,26 @@
+.image1 {
+  position: relative;
+  top: 50px;
+  left: 100px;
+  margin-bottom: 50px;
+}
+.image2 {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+.image3 {
+  position: absolute;
+  bottom: 0px;
+}
+
+a {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
