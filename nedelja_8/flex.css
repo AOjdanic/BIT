@@ -1,0 +1,40 @@
+.father_of_3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.father_of_3 div {
+  flex: 1;
+  text-align: center;
+  color: white;
+}
+#one {
+  background-color: orange;
+}
+#two {
+  background-color: orangered;
+}
+#three {
+  background-color: black;
+}
+
+.parent {
+  height: 300px;
+  width: 600px;
+  display: flex;
+  /* flex-flow: row wrap; */
+}
+
+.four {
+  flex: 2;
+  background-color: rgb(243, 153, 74);
+  text-align: center;
+  padding-top: 140px;
+  color: white;
+}
+
+#one,
+#two,
+#three {
+  padding-top: 40px;
+}
