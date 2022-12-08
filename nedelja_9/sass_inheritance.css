@@ -1,0 +1,22 @@
+div {
+  margin: auto;
+  width: 960px;
+}
+
+.paragraph1, .paragraph3, .paragraph2 {
+  display: inline-block;
+  width: 300px;
+  border: 2px solid red;
+}
+
+.paragraph2 {
+  border-color: blue;
+  border-style: dashed;
+}
+
+.paragraph3 {
+  border-color: green;
+  border-style: dotted;
+}
+
+/*# sourceMappingURL=sass_inheritance.css.map */

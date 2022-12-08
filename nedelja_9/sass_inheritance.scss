@@ -1,0 +1,26 @@
+$fullWidth: 960px;
+$marginLeft: 20px;
+$borderColor1: red;
+$borderColor2: blue;
+$borderColor3: green;
+div {
+  margin: auto;
+  width: $fullWidth;
+}
+.paragraph1 {
+  display: inline-block;
+  width: calc(($fullWidth - 3 * $marginLeft) / 3);
+  border: 2px solid $borderColor1;
+}
+
+.paragraph2 {
+  @extend .paragraph1;
+  border-color: $borderColor2;
+  border-style: dashed;
+}
+
+.paragraph3 {
+  @extend .paragraph1;
+  border-color: $borderColor3;
+  border-style: dotted;
+}

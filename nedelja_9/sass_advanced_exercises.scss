@@ -1,0 +1,124 @@
+$linkColor: green;
+$activeColor: yellow;
+$visitedColor: orange;
+$backgroundColor1: red;
+$backgroundColor2: purple;
+$backgroundColor3: blue;
+$backgroundColor4: orange;
+$tableWidth: 1000px;
+$paragraphWidth: 300px;
+$paddingLeft: 10px;
+$paddingRight: 10px;
+$borderWidthLeft: 2px;
+$borderWidthRight: 2px;
+$contentBox: content-box;
+$borderBox: border-box;
+ul {
+  li {
+    a {
+      text-decoration: none;
+      background-color: $linkColor;
+      &:active {
+        background-color: $activeColor;
+      }
+      &:visited {
+        background-color: $visitedColor;
+      }
+    }
+  }
+}
+.important {
+  font-weight: bold;
+}
+
+@mixin background-color($i) {
+  @if $i==1 {
+    background-color: $backgroundColor1;
+  }
+  @if $i==2 {
+    background-color: $backgroundColor2;
+  }
+  @if $i==3 {
+    background-color: $backgroundColor3;
+  }
+  @if $i==4 {
+    background-color: $backgroundColor4;
+  }
+}
+
+@for $i from 1 through 4 {
+  .paragraph#{$i} {
+    font-size: 14px+ (2px * $i);
+    @include background-color($i);
+  }
+}
+
+@function paragraphWidthContentOrBox(
+  $paragraphWidth,
+  $paddingLeft,
+  $paddingRight,
+  $borderWidthLeft,
+  $borderWidthRight,
+  $boxSizing
+) {
+  @if $boxSizing==$contentBox {
+    @return $paragraphWidth - $paddingLeft - $paddingRight - $borderWidthLeft -
+      $borderWidthRight;
+  } @else if $boxSizing==$borderBox {
+    @return $paragraphWidth;
+  }
+}
+
+.paragraphWithContentBox {
+  border-style: solid;
+
+  $boxSizing: $contentBox;
+  box-sizing: $boxSizing;
+  padding-left: $paddingLeft;
+  padding-right: $paddingRight;
+  border-left-width: $borderWidthLeft;
+  border-right-width: $borderWidthRight;
+  width: paragraphWidthContentOrBox(
+    $paragraphWidth,
+    $paddingLeft,
+    $paddingRight,
+    $borderWidthLeft,
+    $borderWidthRight,
+    $boxSizing
+  );
+}
+
+.paragraphWithBorderBox {
+  border-style: solid;
+  $boxSizing: $borderBox;
+  box-sizing: $boxSizing;
+  padding-left: $paddingLeft;
+  padding-right: $paddingRight;
+  border-left-width: $borderWidthLeft;
+  border-right-width: $borderWidthRight;
+  width: paragraphWidthContentOrBox(
+    $paragraphWidth,
+    $paddingLeft,
+    $paddingRight,
+    $borderWidthLeft,
+    $borderWidthRight,
+    $boxSizing
+  );
+}
+
+@function cellWidth($tableWidth, $numberOfColumns) {
+  $cellWidth: calc($tableWidth/$numberOfColumns);
+  @return $cellWidth;
+}
+
+table {
+  margin: auto;
+  padding: 0px;
+  width: $tableWidth;
+  border-collapse: collapse;
+  td {
+    margin: 0px;
+    padding: 0px;
+    width: cellWidth($tableWidth, 5);
+  }
+}
