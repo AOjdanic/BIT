@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  border-width: 0px;
+}
+
+@import "variables";
+@import "mixins";
+
+.container {
+  width: calc($containerWidth/$footerWidth * 100%);
+  margin: auto;
+}
+
+ul {
+  background-color: darkred;
+  color: white;
+  overflow: hidden;
+  margin-bottom: calc(1px / $containerHeight * 100%);
+  width: calc($containerWidth/$containerWidth * 100%);
+
+  li {
+    display: inline;
+    margin-left: calc(15px / $containerWidth * 100%);
+    float: right;
+    padding-top: calc(10px / $containerHeight * 100%);
+    padding-bottom: calc(10px / $containerHeight * 100%);
+    font-size: 20px;
+    padding-right: calc(15px / $containerWidth * 100%);
+  }
+}
+
+img {
+  width: calc($containerWidth/$containerWidth * 100%);
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.two_p {
+  margin-top: calc(-100px / $containerHeight * 100%);
+}
+
+.placeholder {
+  @include box-shadow(5px);
+  color: white;
+  font-size: $fontSize;
+  border-width: 0px 0px 0px 0px;
+  display: inline-block;
+  width: calc($placeholderWidth/$containerWidth * 100%);
+  height: $placeholderHeight;
+  text-align: center;
+  margin-right: calc(-4px / $containerWidth * 100%);
+  margin-left: calc(
+    (($containerWidth - 3 * ($placeholderWidth)) / 4) / $containerWidth * 100%
+  );
+  p {
+    padding-top: calc(($placeholderHeight - ($fontSize + 3px)) / 2);
+    margin: 0px;
+  }
+}
+
+.content {
+  display: inline-block;
+  margin-left: calc(15px / $containerWidth * 100%);
+  width: calc(
+    ($containerWidth - 2 * $placeholderWidth - 3 * 15px) / $containerWidth *
+      100%
+  );
+  margin-right: 0px;
+  background-color: $contentColor;
+  p {
+    font-size: $fontSize;
+    padding-left: calc(15px / $containerWidth * 100%);
+    border-bottom: 2px solid black;
+    padding-bottom: calc(5px / $containerHeight * 100%);
+  }
+}
+
+.paragraph {
+  @include text-shadow(2px);
+  width: calc($paragraphWidth/$containerWidth * 100%);
+  display: inline-block;
+  font-size: $fontSize;
+  margin-left: calc(15px / $containerWidth * 100%);
+  margin-right: calc(-4px / $containerWidth * 100%);
+}
+
+@for $i from 1 through 4 {
+  .placeholder-#{$i} {
+    @if $i==1 {
+      background-color: $paragraphColor_1;
+    } @else if $i==2 {
+      background-color: $paragraphColor_2;
+    } @else if $i==3 {
+      background-color: $paragraphColor_3;
+    } @else if $i==4 {
+      background-color: $paragraphColor_4;
+    }
+  }
+}
+.footer {
+  background-color: $footerColor;
+  color: white;
+  width: calc($footerWidth/$footerWidth * 100%);
+  padding-top: calc(10px / $containerHeight * 100%);
+  padding-bottom: calc(10px / $containerHeight * 100%);
+  margin: auto;
+  span {
+    margin-left: calc(175px / $footerWidth * 100%);
+  }
+}

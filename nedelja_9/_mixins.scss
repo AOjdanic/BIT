@@ -1,0 +1,7 @@
+@mixin box-shadow($size) {
+  box-shadow: $size $size $size $size black;
+}
+
+@mixin text-shadow($size) {
+  text-shadow: $size $size $size purple;
+}
