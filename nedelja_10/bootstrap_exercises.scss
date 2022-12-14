@@ -1,0 +1,29 @@
+* {
+  color: white;
+  text-align: center;
+}
+
+.row {
+  section {
+    border: 2px solid white;
+  }
+}
+
+#one {
+  background-color: green;
+  section {
+    background-color: darkorange;
+  }
+}
+#two {
+  background-color: red;
+  section {
+    background-color: darkred;
+  }
+}
+#three {
+  background-color: blue;
+  section {
+    background-color: darkblue;
+  }
+}

@@ -1,0 +1,42 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.container {
+  border: 2px solid gray;
+}
+.question_row {
+  justify-content: center;
+}
+
+.question {
+  font-size: 25px;
+  font-weight: bolder;
+}
+.reward {
+  justify-content: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.reward > h1 {
+  font-weight: bolder;
+}
+
+.bold {
+  font-weight: bolder;
+  font-size: 20px;
+}
+table {
+  margin-bottom: 20px;
+  text-align: center;
+}
+td {
+  text-align: left;
+}
+.back {
+  margin-bottom: 20px;
+}
+
+.no_border {
+  border-style: none;
+}
