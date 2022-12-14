@@ -1,0 +1,121 @@
+$placeholderHeight: 200px;
+$placeholderWidth: 300px;
+$fontSize: 17px;
+$pColor_1: darkred;
+$pColor_2: darkblue;
+$pColor_3: darkorange;
+$pColor_4: darkgreen;
+* {
+  box-sizing: border-box !important;
+}
+.container {
+  width: 960px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+ul {
+  background-color: darkred;
+  li {
+    color: white;
+  }
+}
+
+img {
+  width: 100%;
+  margin-top: 2px;
+}
+
+.placeholder {
+  padding-left: 0px !important;
+  width: $placeholderWidth;
+  height: $placeholderHeight;
+  background-color: darkred;
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 10px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-top: calc(($placeholderHeight - 2 * 23px) / 2);
+  span {
+    margin-bottom: 0px;
+  }
+}
+
+.col {
+  margin: 0px !important;
+  padding: 0px !important;
+
+  width: 33.3% !important;
+}
+
+.content {
+  margin-top: 5px;
+  background-color: darkorange;
+  padding: 20px 10px 10px 10px;
+  .cont_p {
+    border-bottom: 1px solid black;
+    font-size: $fontSize + 2px;
+  }
+}
+.col-4 {
+  margin-top: 10px;
+  p {
+    font-size: 18px;
+    padding-right: 18px;
+  }
+}
+
+@for $i from 1 through 4 {
+  .pl-#{$i} {
+    @if $i==1 {
+      background-color: $pColor_1 !important;
+    } @else if $i==2 {
+      background-color: $pColor_2 !important;
+    } @else if $i==3 {
+      background-color: $pColor_3 !important;
+    } @else if $i==4 {
+      background-color: $pColor_4 !important;
+    }
+  }
+}
+
+#footer {
+  background-color: darkblue;
+  color: white;
+  width: 1280px;
+  margin-right: 0px;
+  margin-left: -160px !important;
+  p {
+    padding-top: 1%;
+    padding-left: 13%;
+  }
+}
+
+.row {
+  width: 960px;
+  margin-left: 0px !important;
+}
+.content {
+  // width: 300px;
+  margin-left: 5px;
+}
+
+.first_p {
+  margin-left: 15px !important;
+}
+
+.content_col {
+  margin-left: 30px !important;
+}
+.this_row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+.first_row_text {
+  width: 300px;
+  font-size: 18px;
+  margin-left: 15px;
+  padding-right: 28px;
+}

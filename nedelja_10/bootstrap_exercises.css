@@ -1,0 +1,31 @@
+* {
+  color: white;
+  text-align: center;
+}
+
+.row section {
+  border: 2px solid white;
+}
+
+#one {
+  background-color: green;
+}
+#one section {
+  background-color: darkorange;
+}
+
+#two {
+  background-color: red;
+}
+#two section {
+  background-color: darkred;
+}
+
+#three {
+  background-color: blue;
+}
+#three section {
+  background-color: darkblue;
+}
+
+/*# sourceMappingURL=bootstrap_exercises.css.map */
