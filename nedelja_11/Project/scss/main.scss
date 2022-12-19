@@ -1,0 +1,195 @@
+@import "navbar";
+
+@import "masthead";
+
+@import "portfolio";
+
+@import "contact";
+
+@import "global";
+
+@import "variables";
+
+@import "mixins";
+
+#about {
+  background-color: $greenish;
+  p {
+    padding-top: 50px;
+    color: white;
+    font-weight: bolder;
+    font-size: 48px;
+  }
+}
+#lorem {
+  background-color: $greenish;
+  p {
+    color: white;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 70px;
+    font-size: 18px;
+    @media screen and (max-width: 767px) {
+      max-width: 570px;
+    }
+    @media screen and (min-width: 768px) {
+      max-width: 770px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media screen and (min-width: 992px) {
+      //   display: inline-block !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-left: 20px !important;
+      margin-right: 20px !important;
+      max-width: 346px;
+    }
+  }
+}
+.lorem_holder {
+  @media screen and (min-width: 992px) {
+    background-color: $greenish;
+    display: flex;
+    justify-content: center;
+    margin-top: -2px;
+  }
+}
+
+#button2 {
+  background-color: $greenish;
+  button {
+    padding: auto 10px auto 10px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+}
+
+#location {
+  background-color: $blueish;
+  p {
+    padding-top: 50px;
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+}
+#centar {
+  padding-bottom: 0px !important;
+  padding-top: 20px !important;
+  background-color: $blueish;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 220px !important;
+  }
+  @media screen and (min-width: 992px) {
+    padding-bottom: 92px !important;
+  }
+  p {
+    display: block;
+    color: white;
+    font-weight: bolder;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    line-height: 0.5;
+    @media screen and (min-width: 768px) {
+      line-height: unset !important;
+    }
+    @media screen and (min-width: 992px) {
+      line-height: 0.5 !important;
+    }
+  }
+}
+.aroundweb {
+  @media screen and (min-width: 768px) {
+    padding-bottom: 385px !important;
+    // padding-left: 50px;
+    // padding-right: 50px;
+    // max-width: 270px !important;
+  }
+  @media screen and (min-width: 992px) {
+    padding-bottom: 185px !important;
+  }
+}
+.linkedin {
+  @media screen and (min-width: 768px) {
+    position: relative;
+    // top: 100%;
+    // right: 48%;
+    left: 30%;
+  }
+  @media screen and (min-width: 992px) {
+    position: unset;
+  }
+}
+#nemanjina {
+  @media screen and (min-width: 768px) {
+    max-width: 266px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+    @media screen and (min-width: 992px) {
+      max-width: unset;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+#around {
+  @media screen and (min-width: 768px) {
+    max-width: 260px;
+    padding-left: 15%;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: unset;
+    padding-left: unset;
+  }
+}
+#details {
+  background-color: $blueish;
+  text-align: center;
+  p {
+    padding-top: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 53px;
+    padding-right: 53px;
+    max-width: 600px;
+    @media screen and (min-width: 768px) {
+      padding-left: 35px;
+      padding-right: 35px;
+      padding-bottom: 130px;
+      max-width: 266px;
+    }
+    @media screen and (min-width: 992px) {
+      max-width: 341px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 23px;
+    }
+  }
+}
+#middle_col_footer {
+  @media screen and (min-width: 768px) {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+.moredetails {
+  @media screen and (min-width: 768px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    padding-top: 35px !important;
+    max-width: 266px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: unset;
+  }
+}
+#footer {
+  background-color: $blueish;
+  p {
+    color: white;
+    padding-top: 70px;
+  }
+}

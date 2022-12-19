@@ -1,0 +1,68 @@
+@import "variables";
+
+#navbar {
+  background-color: $blueish;
+  color: $blueish;
+  @media screen and (min-width: 992px) {
+    justify-content: space-around;
+  }
+}
+#student {
+  @media screen and (max-width: 767px) {
+    padding-left: 2%;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 20%;
+  }
+}
+#collapsedContent {
+  background-color: $blueish;
+  @media screen and (max-width: 767px) {
+    padding-left: 4% !important;
+    padding-top: 0px !important;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 20.8% !important;
+    padding-top: 0px !important;
+  }
+}
+#button {
+  @media screen and (max-width: 767px) {
+    margin-right: 2%;
+    background-color: $greenish !important;
+  }
+  @media screen and (min-width: 768px) {
+    background-color: $blueish !important;
+    margin-right: 15%;
+  }
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+ul {
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+  @media screen and (min-width: 992px) {
+    margin-bottom: 0px !important;
+    margin-right: 18%;
+    li {
+      display: inline-block;
+    }
+  }
+}
+#navbarToggleExternalContent {
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  display: block;
+  line-height: 3;
+}
+.collapse {
+  margin-top: -2px;
+}
