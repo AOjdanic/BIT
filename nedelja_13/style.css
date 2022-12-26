@@ -1,0 +1,12 @@
+.active {
+  background-color: #0fa0b3;
+}
+
+.green {
+  background-color: green;
+  text-transform: uppercase;
+}
+
+.purple {
+  background-color: purple;
+}
