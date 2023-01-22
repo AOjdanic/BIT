@@ -46,127 +46,227 @@ Applications:
 */
 
 //////////////////////////////////////////////////////////////////////
-function Person(name, lastName) {
-  (this.name = name), (this.lastName = lastName);
-}
+// function Person(name, lastName) {
+//   (this.name = name), (this.lastName = lastName);
+// }
 
-function Employee(name, lastName, job, salary) {
-  Person.call(this, name, lastName);
-  (this.job = job), (this.salary = salary);
-}
+// function Employee(name, lastName, job, salary) {
+//   Person.call(this, name, lastName);
+//   (this.job = job), (this.salary = salary);
+// }
 
-function Developer(name, lastName, job, salary, specialization) {
-  Employee.call(this, name, lastName, job, salary);
-  this.specialization = specialization;
-}
+// function Developer(name, lastName, job, salary, specialization) {
+//   Employee.call(this, name, lastName, job, salary);
+//   this.specialization = specialization;
+// }
 
-function Manager(name, lastName, job, salary, department) {
-  Employee.call(this, name, lastName, job, salary);
-  this.department = department;
-}
+// function Manager(name, lastName, job, salary, department) {
+//   Employee.call(this, name, lastName, job, salary);
+//   this.department = department;
+// }
 
-Developer.prototype.getSpecialization = function () {
-  return this.specialization;
-};
+// Developer.prototype.getSpecialization = function () {
+//   return this.specialization;
+// };
 
-Manager.prototype.getDepartment = function () {
-  return this.department;
-};
+// Manager.prototype.getDepartment = function () {
+//   return this.department;
+// };
 
-Manager.prototype.changeDepartment = function (department) {
-  this.department = department;
-};
+// Manager.prototype.changeDepartment = function (department) {
+//   this.department = department;
+// };
 
-Employee.prototype.getData = function () {
-  return `${this.name} ${this.lastName} ${this.salary}`;
-};
+// Employee.prototype.getData = function () {
+//   return `${this.name} ${this.lastName} ${this.salary}`;
+// };
 
-Employee.prototype.getSalary = function () {
-  return `${this.salary}`;
-};
+// Employee.prototype.getSalary = function () {
+//   return `${this.salary}`;
+// };
 
-Employee.prototype.increaseSalary = function () {
-  return (this.salary = this.salary * 0.1);
-};
+// Employee.prototype.increaseSalary = function () {
+//   return (this.salary = this.salary * 0.1);
+// };
 
-//////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
 
-function WebApp(name, url, technologies, licence, stars) {
-  (this.name = name),
-    (this.url = url),
-    (this.technologies = technologies),
-    (this.licence = licence),
-    (this.stars = stars),
-    AppMethods.call(this);
-}
+// function WebApp(name, url, technologies, licence, stars) {
+//   (this.name = name),
+//     (this.url = url),
+//     (this.technologies = technologies),
+//     (this.licence = licence),
+//     (this.stars = stars),
+//     AppMethods.call(this);
+// }
+
+// /////////////////////////////////////////////////////////////////////
+
+// function MobileApp(name, platforms, licence, stars) {
+//   (this.name = name),
+//     (this.platforms = platforms),
+//     (this.licence = licence),
+//     (this.stars = stars),
+//     AppMethods.call(this);
+// }
+
+// /////////////////////////////////////////////////////////////////////
+
+// WebApp.prototype.getData = function () {
+//   return `${this.name} ${this.platforms} ${this.licence} ${this.stars}`;
+// };
+
+// WebApp.prototype.reactBased = function () {
+//   if (
+//     this.technologies.filter(
+//       (technology) => technology.toLowerCase() == "react"
+//     )
+//   ) {
+//     return true;
+//   }
+// };
+
+// /////////////////////////////////////////////////////////////////////
+
+// MobileApp.prototype.getData = function () {
+//   return `${this.name} ${this.platforms} ${this.licence} ${this.stars}`;
+// };
+
+// MobileApp.prototype.forAndroid = function () {
+//   if (this.platforms.filter((platform) => platform.toLowerCase() == "android"))
+//     return true;
+//   else return false;
+// };
+
+// /////////////////////////////////////////////////////////////////////
+
+// function AppMethods() {
+//   (this.isCCLicence = function () {
+//     if (this.licence.toLowerCase() == "creative commons") {
+//       return true;
+//     } else return false;
+//   }),
+//     (this.like = function () {
+//       this.stars++;
+//       return;
+//     }),
+//     (this.showStars = function () {
+//       console.log(this.stars);
+//     });
+// }
 
 /////////////////////////////////////////////////////////////////////
 
-function MobileApp(name, platforms, licence, stars) {
-  (this.name = name),
-    (this.platforms = platforms),
-    (this.licence = licence),
-    (this.stars = stars),
-    AppMethods.call(this);
-}
+//Classes
 
-/////////////////////////////////////////////////////////////////////
-
-WebApp.prototype.getData = function () {
-  return `${this.name} ${this.platforms} ${this.licence} ${this.stars}`;
-};
-
-WebApp.prototype.reactBased = function () {
-  if (
-    this.technologies.filter(
-      (technology) => technology.toLowerCase() == "react"
-    )
-  ) {
-    return true;
+class Person {
+  constructor(name, lastName) {
+    (this.name = name), (this.lastName = lastName);
   }
-};
+}
+
+class Employee extends Person {
+  constructor(name, lastName, job, salary) {
+    super(name, lastName);
+    (this.job = job), (this.salary = salary);
+  }
+  getData() {
+    return `${this.name} ${this.lastName} ${this.salary}`;
+  }
+
+  getSalary() {
+    console.log(this.salary);
+  }
+
+  increaseSalary() {
+    this.salary = this.salary * 1.1;
+    return this.salary;
+  }
+}
+
+class Developer extends Employee {
+  constructor(name, lastName, job, salary, specialization) {
+    super(name, lastName, job, salary);
+    this.specialization = specialization;
+  }
+
+  getSpecialization() {
+    console.log(this.specialization);
+  }
+}
+
+class Manager extends Employee {
+  constructor(name, lastName, job, salary, department) {
+    super(name, lastName, job, salary);
+    this.department = department;
+  }
+
+  getDepartment() {
+    console.log(this.department);
+  }
+
+  changeDepartment(departmentIn) {
+    return (this.department = departmentIn);
+  }
+}
 
 /////////////////////////////////////////////////////////////////////
 
-MobileApp.prototype.getData = function () {
-  return `${this.name} ${this.platforms} ${this.licence} ${this.stars}`;
-};
-
-MobileApp.prototype.forAndroid = function () {
-  if (this.platforms.filter((platform) => platform.toLowerCase() == "android"))
-    return true;
-  else return false;
-};
-
-/////////////////////////////////////////////////////////////////////
-
-function AppMethods() {
-  (this.isCCLicence = function () {
+class BothTech {
+  isCCLicence() {
     if (this.licence.toLowerCase() == "creative commons") {
       return true;
     } else return false;
-  }),
-    (this.like = function () {
-      this.stars++;
-      return;
-    }),
-    (this.showStars = function () {
-      console.log(this.stars);
-    });
+  }
+
+  like() {
+    this.stars = ++this.stars;
+  }
+
+  showStars() {
+    console.log(this.stars);
+  }
 }
 
-/////////////////////////////////////////////////////////////////////
+class WebApp extends BothTech {
+  constructor(name, url, technologies, licence, stars) {
+    super("");
+    (this.name = name),
+      (this.url = url),
+      (this.technologies = technologies),
+      (this.licence = licence),
+      (this.stars = stars);
+  }
 
-const whatsapp = new MobileApp(
-  "Whatsapp",
-  ["Android", "iOS"],
-  "Creative Commons",
-  5
-);
-console.log(whatsapp);
+  getData() {
+    console.log(
+      `${this.name} ${this.url} ${this.technologies} ${this.licence} ${this.stars}`
+    );
+  }
 
-console.log(whatsapp.getData());
-console.log(whatsapp.forAndroid());
-console.log(whatsapp.isCCLicence());
-whatsapp.like();
-whatsapp.showStars();
+  reactBased() {
+    return this.technologies.some(
+      (technology) => technology.toLowerCase() === "react"
+    );
+  }
+}
+
+class MobileApp extends BothTech {
+  constructor(name, platforms, licence, stars) {
+    super("");
+    (this.name = name),
+      (this.platforms = platforms),
+      (this.licence = licence),
+      (this.stars = stars);
+  }
+
+  getData() {
+    console.log(`${this.name} ${this.platforms} ${this.licence} ${this.stars}`);
+  }
+
+  forAndroid() {
+    return this.platforms.some(
+      (platform) => platform.toLowerCase() == "android"
+    );
+  }
+}
