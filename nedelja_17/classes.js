@@ -26,7 +26,9 @@ class Car {
   }
 
   accelerate(speedIncrease) {
-    return (this.speed += speedIncrease);
+    this.speed += speedIncrease;
+    this.checkMotion();
+    return;
   }
 
   break(speedDecrease) {
@@ -34,7 +36,7 @@ class Car {
       ? (this.speed -= speedDecrease)
       : (this.speed = 0);
 
-    this.speed > 0 ? (this.motion = true) : (this.motion = false);
+    this.checkMotion();
     return;
   }
 
@@ -45,8 +47,8 @@ class Car {
   }
 
   stopCar() {
-    this.motion = false;
-    return (this.speed = 0);
+    this.speed = 0;
+    this.checkMotion();
   }
 }
 
