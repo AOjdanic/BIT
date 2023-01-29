@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin-bottom: 3px;
+}
+
+.wrapper {
+  width: 1800px;
+  margin: 0 auto;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+p {
+  margin: 8px;
+}
+select,
+option {
+  display: block;
+  height: 35px;
+  background-color: rgba(153, 153, 153, 0.167);
+  border-radius: 10px;
+  border-color: rgba(153, 153, 153, 0.167);
+  padding-left: 10px;
+}
+
+input {
+  height: 40px;
+  padding-left: 10px;
+}
+
+.btn {
+  background-color: #18a01d;
+  color: white;
+  border-color: #18a01d;
+}

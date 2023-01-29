@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Exam statistics June</h1>
+        <p>Total students: <span class="span_total">0</span></p>
+        <div class="passed">
+          <span class="span_passed">PASSED</span
+          ><span class="span_numberPassed">0</span>
+        </div>
+        <div class="failed">
+          <p class="percentage">0%</p>
+          <span class="span_failed">FAILED</span
+          ><span class="span_numberFailed">0</span>
+        </div>
+      </header>
+      <nav>
+        <select class="subjects">
+          <option>Subject</option>
+          <option>Mathematics</option>
+          <option>Biology</option>
+          <option>Chemistry</option>
+          <option>Physics</option>
+          <option>Geography</option>
+          <option>History</option>
+          <option>Arts</option>
+          <option>Linguistics</option>
+          <option>Sport</option>
+        </select>
+        <input class="student" type="text" placeholder="Name surname" />
+        <select class="grades">
+          <option>Grade</option>
+
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+        <input class="button" type="submit" value="ADD" />
+      </nav>
+      <main>
+        <div class="passed_div">
+          <p>PASSED</p>
+          <hr />
+        </div>
+        <div class="failed_div">
+          <p>FAILED</p>
+          <hr />
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="./JS/subject.js"></script>
+  <script src="./JS/student.js"></script>
+  <script src="./JS/exam.js"></script>
+  <script src="./JS/form.js"></script>
+  <script src="./JS/app.js"></script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Movie festival</h1>
+      <form>
+        <fieldset>
+          <p>Please fill out this form</p>
+          <p>Movie</p>
+          <fieldset>
+            <label for="title">Title</label>
+            <input name="title" type="text" placeholder="Title" class="title" />
+            <label for="length">Length (min)</label>
+            <input
+              type="number"
+              placeholder="Length in min"
+              class="length"
+              name="length"
+            />
+            <select class="select_menu">
+              <option>-</option>
+              <option>Drama</option>
+              <option>Action</option>
+              <option>Comedy</option>
+              <option>Thriller</option>
+              <option>Horror</option>
+            </select>
+            <br />
+            <input
+              type="button"
+              class="btn btn_createMovie"
+              value="Create movie"
+            />
+            <ul class="movie_list"></ul>
+          </fieldset>
+          <p>Program</p>
+          <fieldset>
+            <label for="date">Date</label>
+            <input
+              name="date"
+              type="text"
+              class="date"
+              placeholder="dd/mm/yyyy"
+            />
+            <input
+              type="button"
+              class="btn btn_createProgram"
+              value="Create program"
+            />
+            <ul class="program_list"></ul>
+            <hr />
+            <p>Movie</p>
+            <select class="movie_selectMenu">
+              <option>-</option>
+            </select>
+            <p>Program</p>
+            <select class="program_selectMenu">
+              <option>-</option>
+              <input
+                type="button"
+                class="btn btn_addMovie"
+                value="Add movie to program"
+              />
+            </select>
+            <ul class="programs_complete"></ul>
+          </fieldset>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <script src="./js/entities.js"></script>
+  <script src="./js/form.js"></script>
+</html>

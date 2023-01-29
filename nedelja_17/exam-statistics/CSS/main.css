@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+header {
+  height: 400px;
+  background-image: url("https://i.pinimg.com/originals/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 100px;
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+p {
+  color: #fff;
+  margin: 0 auto;
+  font-size: 60px;
+  padding-top: 10px;
+  width: fit-content;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+.passed,
+.failed {
+  display: flex;
+  flex: 0.33;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #01c9c9;
+  max-width: 500px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.failed {
+  position: relative;
+  background-color: #dc143c;
+}
+.span_passed,
+.span_failed {
+  margin-left: 20px;
+  color: #333;
+  display: block;
+  width: fit-content;
+  float: inline-start;
+  text-align: start;
+}
+.span_numberPassed,
+.span_numberFailed {
+  margin-right: 65px;
+  display: block;
+  width: fit-content;
+  float: inline-end;
+  text-align: end;
+}
+
+nav {
+  text-align: center;
+  height: 60px;
+  background-color: #999;
+}
+
+nav > * {
+  margin-top: 5px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.student {
+  width: 500px;
+  padding-left: 20px;
+  border-style: none;
+}
+
+nav > select:first-child {
+  width: 150px;
+  text-align: center;
+}
+
+nav > .grades {
+  width: 100px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+main > div > p {
+  margin: 0;
+  color: #000;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+main > div {
+  width: 500px;
+  margin: 0;
+  margin-right: 30px;
+}
+
+.failed_div > p {
+  color: #dc143c;
+}
+
+.button {
+  position: relative;
+  top: 6px;
+  font-size: 30px;
+  color: #01c9c9;
+  background-color: #999;
+  border-color: #999;
+  font-weight: bold;
+  border-style: none;
+}
+
+.failed {
+  position: relative;
+}
+
+.percentage {
+  position: absolute;
+  background-color: #b21030;
+  font-size: 16px;
+  right: 12px;
+  top: 7.5px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.student_results {
+  color: black;
+  max-width: 500px;
+  font-weight: lighter;
+  font-size: 18px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: unset;
+}
+.passed_div,
+.failed_div {
+  position: relative;
+}
+.student_results > span {
+  position: absolute;
+  right: 0px;
+  color: #01c9c9;
+}
+.failed_div > .student_results {
+  color: black;
+}
+.failed_div > .student_results > span {
+  color: #dc143c;
+}
