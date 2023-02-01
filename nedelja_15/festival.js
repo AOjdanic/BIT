@@ -90,13 +90,12 @@ const formatDate = function (date) {
 /////////////////////////////////////////////////////////////////////
 
 function Genre(name) {
-  (this.name = name),
-    (this.getData = function () {
-      return `${this.name.at(0).toUpperCase()}${this.name
-        .at(-1)
-        .toUpperCase()}`;
-    });
+  this.name = name;
 }
+
+Genre.prototype.getData = function () {
+  return `${this.name.at(0).toUpperCase()}${this.name.at(-1).toUpperCase()}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
@@ -110,44 +109,47 @@ function Movie(title, genre, duration) {
   }
   (this.title = title),
     (this.genre = new Genre(genre)),
-    (this.duration = duration),
-    (this.getData = function () {
-      return `${this.title}, ${this.duration}, ${this.genre.getData()}`;
-    });
+    (this.duration = duration);
 }
+
+Movie.prototype.getData = function () {
+  return `${this.title}, ${this.duration}, ${this.genre.getData()}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
 function Program(date) {
-  (this.date = new Date(date)),
-    (this.movies = []),
-    (this.moviesTotal = function () {
-      return (this.moviesTotal = this.movies.length);
-    }),
-    (this.addMovie = function (movieIn) {
-      let genreArray = this.movies.map((movie) => movie.genre.name);
-      let durationArray = this.movies.map((movie) => movie.duration);
-
-      if (
-        genreArray.filter((genreName) => genreName == movieIn.genre.name)
-          .length < 4 &&
-        durationArray.reduce((acc, duration) => (acc += duration), 0) +
-          movieIn.duration <
-          480
-      ) {
-        this.movies.push(movieIn);
-      } else {
-        console.log(`You can't add this movie: ${JSON.stringify(movieIn)}`);
-      }
-    }),
-    (this.getData = function () {
-      return `\t${formatDate(this.date)}, program duration ${this.movies
-        .map((movie) => movie.duration)
-        .reduce((acc, val) => (acc += val), 0)} minutes\n\t\t${this.movies
-        .map((movie) => movie.getData())
-        .join("\n\t\t")}`;
-    });
+  (this.date = new Date(date)), (this.movies = []);
 }
+
+Program.prototype.moviesTotal = function () {
+  return (this.moviesTotal = this.movies.length);
+};
+
+Program.prototype.addMovie = function (movieIn) {
+  let genreArray = this.movies.map((movie) => movie.genre.name);
+  let durationArray = this.movies.map((movie) => movie.duration);
+
+  if (
+    genreArray.filter((genreName) => genreName == movieIn.genre.name).length <
+      4 &&
+    durationArray.reduce((acc, duration) => (acc += duration), 0) +
+      movieIn.duration <
+      480
+  ) {
+    this.movies.push(movieIn);
+  } else {
+    console.log(`You can't add this movie: ${JSON.stringify(movieIn)}`);
+  }
+};
+
+Program.prototype.getData = function () {
+  return `\t${formatDate(this.date)}, program duration ${this.movies
+    .map((movie) => movie.duration)
+    .reduce((acc, val) => (acc += val), 0)} minutes\n\t\t${this.movies
+    .map((movie) => movie.getData())
+    .join("\n\t\t")}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
@@ -161,26 +163,29 @@ function Festival(name, maxNumberOfMovies) {
   }
   (this.name = name),
     (this.programs = []),
-    (this.numberOfMoviesAllPrograms = function () {
-      return (this.numberOfMoviesAllPrograms = this.programs
-        .map((program) => program.moviesTotal)
-        .reduce((acc, val) => (acc += val), 0));
-    }),
-    (this.addProgram = function (program) {
-      this.programs.push(program);
-    }),
-    (this.getData = function () {
-      if (this.programs.length == 0) {
-        return console.log(`${this.name}\n\tProgram to be announced`);
-      }
-      return `${this.name} has ${
-        this.numberOfMoviesAllPrograms
-      } movie titles\n${this.programs
-        .map((program) => program.getData())
-        .join("\n")}`;
-    }),
     (this.maxNumberOfMovies = maxNumberOfMovies);
 }
+
+Festival.prototype.numberOfMoviesAllPrograms = function () {
+  return (this.numberOfMoviesAllPrograms = this.programs
+    .map((program) => program.moviesTotal)
+    .reduce((acc, val) => (acc += val), 0));
+};
+
+Festival.prototype.addProgram = function (program) {
+  this.programs.push(program);
+};
+
+Festival.prototype.getData = function () {
+  if (this.programs.length == 0) {
+    return console.log(`${this.name}\n\tProgram to be announced`);
+  }
+  return `${this.name} has ${
+    this.numberOfMoviesAllPrograms
+  } movie titles\n${this.programs
+    .map((program) => program.getData())
+    .join("\n")}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 

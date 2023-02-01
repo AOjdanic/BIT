@@ -1,5 +1,4 @@
-'use strict';
-
+"use strict";
 /////////////////////////////////////////////////////////////////////
 
 /*
@@ -39,47 +38,52 @@ function Product(name, price, expirationDate) {
   (this.id = Math.trunc(Math.random() * (99999 - 10000 + 1)) + 10000),
     (this.name = name),
     (this.price = String(price.toFixed(2))),
-    (this.expirationDate = expirationDate),
-    (this.getInfo = function () {
-      const code =
-        this.name.slice().at(0).toUpperCase() +
-        this.name.slice().at(-1).toUpperCase() +
-        this.id;
-      return `${code}, ${this.name}, ${this.price}`;
-    });
+    (this.expirationDate = expirationDate);
 }
+
+Product.prototype.getInfo = function () {
+  const code =
+    this.name.slice().at(0).toUpperCase() +
+    this.name.slice().at(-1).toUpperCase() +
+    this.id;
+  return `${code}, ${this.name}, ${this.price}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
 function ShoppingBag() {
   this.products = [];
-  (this.addProduct = function (product) {
-    const expDate = new Date(product.expirationDate);
-    if (expDate.getTime() - Date.now() > 86400000) {
-      this.products.push(product);
-    }
-  }),
-    (this.calcAvgPrice = function () {
-      this.avg = this.products
-        .map(val => val.price)
-        .reduce((acc, price, i, arr) => (acc += Number(price) / arr.length), 0);
-      return this.avg.toFixed(3);
-    }),
-    (this.getMostExpensive = function () {
-      const { id, name, price, expirationDate } = this.products
-        .slice()
-        .sort((a, b) => b.price - a.price)
-        .at(0);
-      console.log(
-        `The most expensive product is => id: ${id}, name: ${name}, price: ${price}, expirationDate: ${expirationDate}`
-      );
-    }),
-    (this.calculateTotalPrice = function () {
-      this.priceTotal = this.products
-        .map(product => product.price)
-        .reduce((acc, price) => (acc = acc + Number(price)), 0);
-    });
 }
+
+ShoppingBag.prototype.addProduct = function (product) {
+  const expDate = new Date(product.expirationDate);
+  if (expDate.getTime() - Date.now() > 86400000) {
+    this.products.push(product);
+  }
+};
+
+ShoppingBag.prototype.calcAvgPrice = function () {
+  this.avg = this.products
+    .map((val) => val.price)
+    .reduce((acc, price, i, arr) => (acc += Number(price) / arr.length), 0);
+  return this.avg.toFixed(3);
+};
+
+ShoppingBag.prototype.getMostExpensive = function () {
+  const { id, name, price, expirationDate } = this.products
+    .slice()
+    .sort((a, b) => b.price - a.price)
+    .at(0);
+  console.log(
+    `The most expensive product is => id: ${id}, name: ${name}, price: ${price}, expirationDate: ${expirationDate}`
+  );
+};
+
+ShoppingBag.prototype.calculateTotalPrice = function () {
+  this.priceTotal = this.products
+    .map((product) => product.price)
+    .reduce((acc, price) => (acc = acc + Number(price)), 0);
+};
 
 /////////////////////////////////////////////////////////////////////
 
@@ -93,7 +97,7 @@ function PaymentCard(balance, status, validUntil) {
 
 const checkoutAndBuy = function (shoppingBag, paymentCard) {
   if (Number(paymentCard.balance) >= Number(shoppingBag.priceTotal)) {
-    console.log('Purchase Successful!');
+    console.log("Purchase Successful!");
   } else {
     console.log(
       `Purchase Unsuccessful. You are missing ${
@@ -107,17 +111,17 @@ const checkoutAndBuy = function (shoppingBag, paymentCard) {
 
 //Creating objects from constructor functions
 
-const product1 = new Product('milk', 200, '11/15/2023');
+const product1 = new Product("milk", 200, "11/15/2023");
 
-const product2 = new Product('eggs', 270, '1/24/2023');
+const product2 = new Product("eggs", 270, "1/24/2023");
 
-const product3 = new Product('meat', 430, '5/4/2023');
+const product3 = new Product("meat", 430, "5/4/2023");
 
-const product4 = new Product('chocolate', 233, '8/21/2023');
+const product4 = new Product("chocolate", 233, "8/21/2023");
 
-const paymentCard = new PaymentCard(2000, 'active', '04/01/2024');
+const paymentCard = new PaymentCard(2000, "active", "04/01/2024");
 
-const paymentCard2 = new PaymentCard(1000, 'active', '11/22/2026');
+const paymentCard2 = new PaymentCard(1000, "active", "11/22/2026");
 
 const shoppingBag = new ShoppingBag();
 
@@ -130,7 +134,7 @@ const shoppingBag = new ShoppingBag();
   shoppingBag.addProduct(product4);
 
   console.log(
-    'The average price of products in the shopping bag is: ',
+    "The average price of products in the shopping bag is: ",
     shoppingBag.calcAvgPrice()
   );
 

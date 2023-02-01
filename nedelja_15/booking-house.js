@@ -73,25 +73,26 @@ function Country(name, odds, continent) {
 function Person(name, lastName, dateOfBirth) {
   (this.name = name),
     (this.lastName = lastName),
-    (this.dateOfBirth = new Date(dateOfBirth)),
-    (this.summary = function () {
-      return `${this.name} ${this.lastName} ${formatDate(this.dateOfBirth)}`;
-    });
+    (this.dateOfBirth = new Date(dateOfBirth));
 }
+
+Person.prototype.summary = function () {
+  return `${this.name} ${this.lastName} ${formatDate(this.dateOfBirth)}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
 function Player(person, betAmount, country) {
   (this.person = person),
     (this.betAmount = betAmount),
-    (this.country = country),
-    (this.summary = function () {
-      return `${this.country.name}, ${this.betAmount} eur, ${
-        this.person.name
-      } ${this.person.lastName}, ${calcAge(this.person.dateOfBirth)} years\n\t`;
-    });
+    (this.country = country);
 }
 
+Player.prototype.summary = function () {
+  return `${this.country.name}, ${this.betAmount} eur, ${this.person.name} ${
+    this.person.lastName
+  }, ${calcAge(this.person.dateOfBirth)} years\n\t`;
+};
 /////////////////////////////////////////////////////////////////////
 
 function Address(country, city, postalCode, street, number) {
@@ -99,28 +100,29 @@ function Address(country, city, postalCode, street, number) {
     (this.city = city),
     (this.postalCode = postalCode),
     (this.street = street),
-    (this.number = number),
-    (this.summary = function () {
-      return `${this.street} ${this.number}, ${this.postalCode} ${this.city}, ${this.country}`;
-    });
+    (this.number = number);
 }
 
+Address.prototype.summary = function () {
+  return `${this.street} ${this.number}, ${this.postalCode} ${this.city}, ${this.country}`;
+};
 /////////////////////////////////////////////////////////////////////
 
 function BettingPlace(address) {
-  (this.address = address),
-    (this.players = []),
-    (this.summary = function () {
-      return `${this.address.street}, ${this.address.postalCode} ${
-        this.address.city
-      }, sum of all bets: ${this.players
-        .map((player) => player.betAmount)
-        .reduce((acc, bet) => (acc += bet), 0)}eur`;
-    }),
-    (this.addPlayer = function (player) {
-      this.players.push(player);
-    });
+  (this.address = address), (this.players = []);
 }
+
+BettingPlace.prototype.summary = function () {
+  return `${this.address.street}, ${this.address.postalCode} ${
+    this.address.city
+  }, sum of all bets: ${this.players
+    .map((player) => player.betAmount)
+    .reduce((acc, bet) => (acc += bet), 0)}eur`;
+};
+
+BettingPlace.prototype.addPlayer = function (player) {
+  this.players.push(player);
+};
 
 /////////////////////////////////////////////////////////////////////
 
@@ -129,25 +131,27 @@ function BettingHouse(competition) {
     (this.bettingPlaces = []),
     (this.numberOfPlayers = this.bettingPlaces.flatMap(
       (bettingPlace) => bettingPlace.players
-    ).length),
-    (this.addBettingPlace = function (bettingPlace) {
-      this.bettingPlaces.push(bettingPlace);
-    }),
-    (this.summary = function () {
-      let string = "";
-      for (const bettingPlace of this.bettingPlaces) {
-        string += bettingPlace.summary() + "\n\t";
-        bettingPlace.players.forEach(
-          (player) => (string += "\t" + player.summary())
-        );
-      }
-      return `Football World Cup Winner, ${
-        this.bettingPlaces.length
-      } betting places, ${this.bettingPlaces
-        .map((bettingPlace) => bettingPlace.players.length)
-        .reduce((acc, val) => (acc += val), 0)} bets\n\t${string} `;
-    });
+    ).length);
 }
+
+BettingHouse.prototype.addBettingPlace = function (bettingPlace) {
+  this.bettingPlaces.push(bettingPlace);
+};
+
+BettingHouse.prototype.summary = function () {
+  let string = "";
+  for (const bettingPlace of this.bettingPlaces) {
+    string += bettingPlace.summary() + "\n\t";
+    bettingPlace.players.forEach(
+      (player) => (string += "\t" + player.summary())
+    );
+  }
+  return `Football World Cup Winner, ${
+    this.bettingPlaces.length
+  } betting places, ${this.bettingPlaces
+    .map((bettingPlace) => bettingPlace.players.length)
+    .reduce((acc, val) => (acc += val), 0)} bets\n\t${string} `;
+};
 
 /////////////////////////////////////////////////////////////////////
 
