@@ -134,103 +134,118 @@ const fullClassName = function (category) {
 /////////////////////////////////////////////////////////////////////
 
 function Person(name, surname) {
-  (this.name = name),
-    (this.surname = surname),
-    (this.getData = function () {
-      return `${this.name} ${this.surname}`;
-    });
+  (this.name = name), (this.surname = surname);
 }
 
+///////////////////////////////////////
+
+Person.prototype.getData = function () {
+  return `${this.name} ${this.surname}`;
+};
 /////////////////////////////////////////////////////////////////////
 
 function Seat(
   number = Math.floor(Math.random() * (100 - 10 + 1)) + 10,
   category = "e"
 ) {
-  (this.number = number),
-    (this.category = category),
-    (this.getData = function () {
-      return `${this.number}, ${fullClassName(this.category.toUpperCase())}`;
-    });
+  (this.number = number), (this.category = category);
 }
+
+///////////////////////////////////////
+
+Seat.prototype.getData = function () {
+  return `${this.number}, ${fullClassName(this.category.toUpperCase())}`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
 function Passenger(name, surname, number, category) {
   (this.person = new Person(name, surname)),
-    (this.seat = new Seat(number, category)),
-    (this.getData = function () {
-      return `${this.seat.getData()}, ${this.person.getData()}`;
-    });
+    (this.seat = new Seat(number, category));
 }
 
+///////////////////////////////////////
+
+Passenger.prototype.getData = function () {
+  return `${this.seat.getData()}, ${this.person.getData()}`;
+};
 /////////////////////////////////////////////////////////////////////
 
 function Flight(relation, date) {
   (this.relation = relation),
     (this.date = new Date(date)),
-    (this.passengers = []),
-    (this.addPassenger = function (passengerIn) {
-      let samePassenger = this.passengers
-        .filter(
-          (passenger) =>
-            passenger.person.getData() === passengerIn.person.getData()
-        )
-        .at(0);
-      if (samePassenger != undefined) {
-        samePassenger.seat.number = passengerIn.seat.number;
-        samePassenger.seat.category = passengerIn.seat.category;
-      }
-
-      const seatNumbersArray = this.passengers.map(
-        (passenger) => passenger.seat.number
-      );
-
-      if (
-        !seatNumbersArray.includes(passengerIn.seat.number) &&
-        this.passengers.length < 100
-      ) {
-        this.passengers.push(passengerIn);
-      } else {
-        console.log(
-          `You can't add this passenger: ${JSON.stringify(passengerIn)} `
-        );
-      }
-    }),
-    (this.getData = function () {
-      return `\t${formatDate(this.date)}, ${getConsonants(
-        this.relation
-      )}\n\t\t${this.passengers
-        .map((passenger) => passenger.getData())
-        .join("\n\t\t")}\nTotal number of passengers in business category: ${
-        this.passengers.filter((passenger) => passenger.seat.category === "b")
-          .length
-      }`;
-    });
+    (this.passengers = []);
 }
+
+///////////////////////////////////////
+
+Flight.prototype.addPassenger = function (passengerIn) {
+  let samePassenger = this.passengers
+    .filter(
+      (passenger) => passenger.person.getData() === passengerIn.person.getData()
+    )
+    .at(0);
+  if (samePassenger != undefined) {
+    samePassenger.seat.number = passengerIn.seat.number;
+    samePassenger.seat.category = passengerIn.seat.category;
+  }
+
+  const seatNumbersArray = this.passengers.map(
+    (passenger) => passenger.seat.number
+  );
+
+  if (
+    !seatNumbersArray.includes(passengerIn.seat.number) &&
+    this.passengers.length < 100
+  ) {
+    this.passengers.push(passengerIn);
+  } else {
+    console.log(
+      `You can't add this passenger: ${JSON.stringify(passengerIn)} `
+    );
+  }
+};
+
+///////////////////////////////////////
+
+Flight.prototype.getData = function () {
+  return `\t${formatDate(this.date)}, ${getConsonants(
+    this.relation
+  )}\n\t\t${this.passengers
+    .map((passenger) => passenger.getData())
+    .join("\n\t\t")}\nTotal number of passengers in business category: ${
+    this.passengers.filter((passenger) => passenger.seat.category === "b")
+      .length
+  }`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
 function Airport() {
-  (this.name = "Nikola Tesla"),
-    (this.flights = []),
-    (this.addFlight = function (flight) {
-      this.flights.push(flight);
-    }),
-    (this.getData = function () {
-      return `Airport: ${this.name}, total passengers: ${
-        this.flights.flatMap((flight) => flight.passengers).length
-      }\n${this.flights
-        .map((flight) => flight.getData())
-        .join(
-          "\n"
-        )}\nTotal number of passengers in business category across all flights: ${
-        this.flights
-          .flatMap((flight) => flight.passengers)
-          .filter((passenger) => passenger.seat.category == "b").length
-      }`;
-    });
+  (this.name = "Nikola Tesla"), (this.flights = []);
 }
+
+///////////////////////////////////////
+
+Airport.prototype.addFlight = function (flight) {
+  this.flights.push(flight);
+};
+
+///////////////////////////////////////
+
+Airport.prototype.getData = function () {
+  return `Airport: ${this.name}, total passengers: ${
+    this.flights.flatMap((flight) => flight.passengers).length
+  }\n${this.flights
+    .map((flight) => flight.getData())
+    .join(
+      "\n"
+    )}\nTotal number of passengers in business category across all flights: ${
+    this.flights
+      .flatMap((flight) => flight.passengers)
+      .filter((passenger) => passenger.seat.category == "b").length
+  }`;
+};
 
 /////////////////////////////////////////////////////////////////////
 
