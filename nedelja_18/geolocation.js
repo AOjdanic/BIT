@@ -25,4 +25,6 @@ const getCountryName = function () {
 button.addEventListener("click", function (e) {
   e.preventDefault();
   getCountryName();
+  inputField.value = "";
+  inputField.textContent = "";
 });
