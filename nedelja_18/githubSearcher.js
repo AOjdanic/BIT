@@ -20,9 +20,9 @@ inputField.addEventListener("keydown", function (e) {
     request.done(function (msg) {
       console.log(msg);
       let html = `
-          <div class="display disp">
-          <img class="display_img disp" src="${msg.avatar_url}"/>
-          <p class="display_p disp">${msg.login}</p>
+          <div data-owner="${msg.login}" class="display disp">
+          <img data-owner="${msg.login}" class="display_img disp" src="${msg.avatar_url}"/>
+          <p data-owner="${msg.login}" class="display_p disp">${msg.login}</p>
           </div>
           <button class="button inactive">Go back to users</button>`;
       main.insertAdjacentHTML("beforeend", html);
@@ -35,7 +35,7 @@ inputField.addEventListener("keydown", function (e) {
       console.log(msg);
       msg.forEach((repo) => {
         let html = `
-        <table class="repo_table inactive">
+        <table data-owner="${repo.owner.login}" class="repo_table inactive">
         <tr>
         <th><p>Repository name</p></th>
         <th><p>Repository description</p></th>
@@ -56,24 +56,28 @@ inputField.addEventListener("keydown", function (e) {
 
 main.addEventListener("click", function (e) {
   if (e.target.classList.contains("disp")) {
+    console.log(document.querySelector(".disp").dataset.owner);
     document
       .querySelectorAll(".display")
       .forEach((display) => display.classList.toggle("inactive"));
     document.querySelector("button").classList.toggle("inactive");
-    document
-      .querySelectorAll(".repo_table")
-      .forEach((table) => table.classList.toggle("inactive"));
+    document.querySelectorAll(".repo_table").forEach((table) => {
+      if (e.target.dataset.owner === table.dataset.owner)
+        table.classList.toggle("inactive");
+    });
   }
 });
 
 main.addEventListener("click", function (e) {
   if (e.target.classList.contains("button")) {
+    console.log(document.querySelector(".repo_table").dataset.owner);
     document
       .querySelectorAll(".display")
       .forEach((display) => display.classList.toggle("inactive"));
     document.querySelector("button").classList.toggle("inactive");
-    document
-      .querySelectorAll(".repo_table")
-      .forEach((table) => table.classList.toggle("inactive"));
+    document.querySelectorAll(".repo_table").forEach((table) => {
+      if (!table.classList.contains("inactive"))
+        table.classList.toggle("inactive");
+    });
   }
 });
