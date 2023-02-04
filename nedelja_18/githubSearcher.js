@@ -18,7 +18,6 @@ inputField.addEventListener("keydown", function (e) {
       method: "GET",
     });
     request.done(function (msg) {
-      console.log(msg);
       let html = `
           <div data-owner="${msg.login}" class="display disp">
           <img data-owner="${msg.login}" class="display_img disp" src="${msg.avatar_url}"/>
@@ -32,7 +31,6 @@ inputField.addEventListener("keydown", function (e) {
       method: "GET",
     });
     request2.done(function (msg) {
-      console.log(msg);
       msg.forEach((repo) => {
         let html = `
         <table data-owner="${repo.owner.login}" class="repo_table inactive">
@@ -56,7 +54,6 @@ inputField.addEventListener("keydown", function (e) {
 
 main.addEventListener("click", function (e) {
   if (e.target.classList.contains("disp")) {
-    console.log(document.querySelector(".disp").dataset.owner);
     document
       .querySelectorAll(".display")
       .forEach((display) => display.classList.toggle("inactive"));
@@ -70,7 +67,6 @@ main.addEventListener("click", function (e) {
 
 main.addEventListener("click", function (e) {
   if (e.target.classList.contains("button")) {
-    console.log(document.querySelector(".repo_table").dataset.owner);
     document
       .querySelectorAll(".display")
       .forEach((display) => display.classList.toggle("inactive"));
