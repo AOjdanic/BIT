@@ -18,6 +18,12 @@ const getCountryName = function () {
         xmlDoc.getElementsByTagName("geoplugin_countryName")[0].textContent
       }`
     );
+
+    alert(
+      `Your city is: ${
+        xmlDoc.getElementsByTagName("geoplugin_city")[0].textContent
+      }`
+    );
   };
   xmlHttp.send();
 };
