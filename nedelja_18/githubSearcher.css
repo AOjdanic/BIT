@@ -31,6 +31,7 @@ header {
   margin-right: 220px;
 }
 main {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   max-width: 1250px;
@@ -53,4 +54,37 @@ main {
   color: #f1f3f7;
   letter-spacing: 1.2px;
   padding: 10px;
+}
+
+.inactive {
+  display: none;
+}
+
+button {
+  background-image: linear-gradient(to right, blue, blueviolet);
+  padding: 20px;
+  font-size: 24px;
+  color: #f1f3f7;
+  font-weight: 700;
+  border-radius: 20px;
+  border: 1px solid cyan;
+  position: absolute;
+  left: 40%;
+}
+
+.repo_table {
+  border: 2px solid #000;
+  margin-top: 100px;
+  border-radius: 10px;
+  background-color: #f1f3f7;
+}
+td,
+th {
+  border: 2px solid #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  color: #f1f3f7;
+  background-color: #364fc7;
+  border-radius: 10px;
 }
