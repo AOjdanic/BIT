@@ -1,0 +1,32 @@
+* {
+  font-family: sans-serif;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+body {
+  background-color: #258bea;
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  padding-top: 100px;
+  margin-top: 200px;
+  border-radius: 20px 10px;
+}
+.input {
+  display: block;
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.button {
+  display: block;
+  padding: 15px;
+  border-radius: 15px;
+  background-image: linear-gradient(to left, green, lightgreen);
+  border: 2px solid green;
+  font-size: 20px;
+  color: #f1f3f5;
+  font-weight: 700;
+}
