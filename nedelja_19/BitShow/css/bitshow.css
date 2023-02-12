@@ -1,0 +1,71 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+h1,
+input {
+  display: inline !important;
+}
+
+h1 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+input {
+  max-width: 300px;
+}
+
+main {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  background-color: #212529;
+  padding: 20px;
+}
+footer p {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.card {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.wrapper .card {
+  margin-bottom: 20px;
+}
+.wrapper .card .card-title {
+  color: blue;
+}
+
+.popular {
+  color: #212529;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.title {
+  cursor: pointer;
+}/*# sourceMappingURL=bitshow.css.map */
