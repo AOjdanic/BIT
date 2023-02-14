@@ -1,6 +1,7 @@
 * {
   font-family: sans-serif;
 }
+
 body {
   position: relative;
 }
@@ -44,6 +45,8 @@ footer {
 }
 
 .wrapper {
+  max-width: 1150px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -57,11 +60,60 @@ footer {
 }
 .popular {
   color: #212529;
-  font-size: 24px;
+  font-size: 48px;
   font-weight: 900;
   text-align: center;
 }
 
 .title {
   cursor: pointer;
+}
+
+.show_details {
+  font-size: 44px;
+  text-align: left !important;
+  font-weight: 700;
+}
+
+.single_movie {
+  img {
+    display: block;
+    height: 813px;
+    width: 562.6px;
+    justify-content: flex-start !important;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+.season_number {
+  position: absolute;
+  right: 31%;
+  top: 3%;
+  font-weight: 700;
+}
+.season_list {
+  position: absolute;
+  right: 28%;
+  top: 8%;
+}
+.cast {
+  position: absolute;
+  right: 41%;
+  top: 30%;
+  font-weight: 700;
+}
+.character_list {
+  position: absolute;
+  right: 29.5%;
+  top: 35%;
+  text-align: left !important;
+}
+
+nav {
+  height: 10%;
+}
+main {
+  height: 80%;
 }

@@ -55,6 +55,11 @@ search.addEventListener("keypress", function (e) {
 title.addEventListener("click", function (e) {
   popular.textContent = "Popular Shows";
   document.querySelector(".single_movie")?.remove();
+  document.querySelector(".season_list")?.remove();
+  document.querySelector(".character_list")?.remove();
+  document.querySelector(".season_number")?.remove();
+  document.querySelector(".cast")?.remove();
+
   removeCards();
   fetchTop50();
 });
@@ -62,6 +67,7 @@ title.addEventListener("click", function (e) {
 div.addEventListener("click", function (e) {
   let target = e.target.closest(".card");
   if (e.target.classList.contains("wrapper")) return;
+  //showing show image and description
   fetch(`https://api.tvmaze.com/lookup/shows?thetvdb=${target.dataset.id}`)
     .then((result) => result.json())
     // .then((result) => console.log(result))
@@ -72,13 +78,47 @@ div.addEventListener("click", function (e) {
         "afterbegin",
         `<div class="single_movie">
         <img src="${result.image.original}">
+        <h2 class="show_details">Show Details</h2>
         ${result.summary}
+       
         </div>`
       );
       return;
     });
+
+  //list of seasons
   fetch(`https://api.tvmaze.com/shows/${target.dataset.src}/seasons`)
     .then((seasons) => seasons.json())
-    .then((season) => console.log(season));
+    .then((result) => {
+      let seasonList = Array.from(result);
+      div.insertAdjacentHTML(
+        "beforeend",
+        `<h2 class="season_number">Seasons (${seasonList.length})</h2>`
+      );
+      div.insertAdjacentHTML("beforeend", `<ul class="season_list"></ul>`);
+      seasonList.forEach((season) => {
+        let html = `
+  <li>${season.premiereDate} - ${season.endDate}</li>
+  `;
+
+        document
+          .querySelector(".season_list")
+          .insertAdjacentHTML("beforeend", html);
+      });
+    });
+  //cast list
+  fetch(`https://api.tvmaze.com/shows/${target.dataset.src}/cast`)
+    .then((result) => result.json())
+    // .then((result) => console.log(result));
+    .then((result) => {
+      div.insertAdjacentHTML("beforeend", `<h2 class="cast">Cast</h2>`);
+      div.insertAdjacentHTML("beforeend", `<ul class="character_list"></ul>`);
+      const list = result.slice(0, 10);
+      list.forEach((char) => {
+        document
+          .querySelector(".character_list")
+          .insertAdjacentHTML("beforeend", `<li>${char.person.name}</li>`);
+      });
+    });
   removeCards();
 });
