@@ -33,6 +33,15 @@ const fetchTop50 = function () {
     });
 };
 
+const removeItems = function () {
+  popular.textContent = "Popular Shows";
+  document.querySelector(".single_movie")?.remove();
+  document.querySelector(".season_list")?.remove();
+  document.querySelector(".character_list")?.remove();
+  document.querySelector(".season_number")?.remove();
+  document.querySelector(".cast")?.remove();
+};
+
 const removeCards = function () {
   return document.querySelectorAll(".card").forEach((el) => el?.remove());
 };
@@ -41,6 +50,8 @@ window.addEventListener("load", fetchTop50);
 
 search.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
+    removeItems();
+
     removeCards();
     fetch(`https://api.tvmaze.com/search/shows?q=${search.value}`)
       .then((result) => result.json())
@@ -53,13 +64,7 @@ search.addEventListener("keypress", function (e) {
 });
 
 title.addEventListener("click", function (e) {
-  popular.textContent = "Popular Shows";
-  document.querySelector(".single_movie")?.remove();
-  document.querySelector(".season_list")?.remove();
-  document.querySelector(".character_list")?.remove();
-  document.querySelector(".season_number")?.remove();
-  document.querySelector(".cast")?.remove();
-
+  removeItems();
   removeCards();
   fetchTop50();
 });
@@ -109,7 +114,6 @@ div.addEventListener("click", function (e) {
   //cast list
   fetch(`https://api.tvmaze.com/shows/${target.dataset.src}/cast`)
     .then((result) => result.json())
-    // .then((result) => console.log(result));
     .then((result) => {
       div.insertAdjacentHTML("beforeend", `<h2 class="cast">Cast</h2>`);
       div.insertAdjacentHTML("beforeend", `<ul class="character_list"></ul>`);
