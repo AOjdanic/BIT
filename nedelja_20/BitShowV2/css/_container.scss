@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  .card {
+    display: inline-block;
+    margin-bottom: 20px;
+    cursor: pointer;
+    .card-title {
+      color: blue;
+      margin-bottom: 0;
+    }
+  }
+}

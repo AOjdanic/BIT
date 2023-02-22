@@ -1,0 +1,65 @@
+.single_show_placeholder {
+  width: 60%;
+  margin: 100px auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+  .picture_placeholder {
+    padding-left: 0;
+    padding-right: 0;
+    width: 562.6px;
+
+    img {
+      width: 100%;
+    }
+  }
+  .seasons_placeholder,
+  .cast_placeholder {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #000;
+  }
+
+  .seasons_placeholder {
+    border-bottom: 1px solid #000;
+  }
+
+  h2 {
+    font-weight: 900;
+    height: fit-content;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 36px;
+  }
+
+  ul {
+    list-style: none;
+    max-height: 400px;
+    overflow: scroll;
+
+    li {
+      padding-left: 30px;
+      line-height: 2;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+  .description_placeholder {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000;
+    h2 {
+      padding-left: 0 !important;
+      font-size: 48px;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+ul::-webkit-scrollbar {
+  visibility: hidden;
+}

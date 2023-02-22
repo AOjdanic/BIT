@@ -1,0 +1,17 @@
+html {
+  position: relative;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #212529;
+  padding: 20px;
+  p {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+}

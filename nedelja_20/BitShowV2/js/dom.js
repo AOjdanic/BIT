@@ -1,0 +1,13 @@
+export const logo = document.querySelector(".logo");
+export const search = document.querySelector(".search");
+export const main = document.querySelector("main");
+export const title = document.querySelector(".title");
+export const container = document.querySelector(".container");
+export const showHolder = document.querySelector(".single_show_placeholder");
+export const pictureHolder = document.querySelector(".picture_placeholder");
+export const seasonsList = document.querySelector(".season_list");
+export const seasonsHeading = document.querySelector(".seasons");
+export const castList = document.querySelector(".cast_list");
+export const descriptionHolder = document.querySelector(".description");
+export const footer = document.querySelector("footer");
+export const navigation = document.querySelector("nav");

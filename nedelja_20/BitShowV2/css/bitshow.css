@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.logo,
+.search {
+  display: inline !important;
+}
+
+.logo {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.search {
+  max-width: 300px;
+}
+
+.title {
+  color: #212529;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.container .card {
+  display: inline-block;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.container .card .card-title {
+  color: blue;
+  margin-bottom: 0;
+}
+
+.single_show_placeholder {
+  width: 60%;
+  margin: 100px auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+.single_show_placeholder .picture_placeholder {
+  padding-left: 0;
+  padding-right: 0;
+  width: 562.6px;
+}
+.single_show_placeholder .picture_placeholder img {
+  width: 100%;
+}
+.single_show_placeholder .seasons_placeholder,
+.single_show_placeholder .cast_placeholder {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #000;
+}
+.single_show_placeholder .seasons_placeholder {
+  border-bottom: 1px solid #000;
+}
+.single_show_placeholder h2 {
+  font-weight: 900;
+  height: fit-content;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 36px;
+}
+.single_show_placeholder ul {
+  list-style: none;
+  max-height: 400px;
+  overflow: scroll;
+}
+.single_show_placeholder ul li {
+  padding-left: 30px;
+  line-height: 2;
+  font-weight: 600;
+  font-size: 18px;
+}
+.single_show_placeholder .description_placeholder {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #000;
+}
+.single_show_placeholder .description_placeholder h2 {
+  padding-left: 0 !important;
+  font-size: 48px;
+}
+
+.hidden {
+  display: none;
+}
+
+ul::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+html {
+  position: relative;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #212529;
+  padding: 20px;
+}
+footer p {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.alert {
+  text-align: center;
+  font-size: 24px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+/*# sourceMappingURL=bitshow.css.map */
