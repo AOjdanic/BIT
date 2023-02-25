@@ -11,3 +11,4 @@ export const castList = document.querySelector(".cast_list");
 export const descriptionHolder = document.querySelector(".description");
 export const footer = document.querySelector("footer");
 export const navigation = document.querySelector("nav");
+export const suggestions = document.querySelector(".search__suggestions");

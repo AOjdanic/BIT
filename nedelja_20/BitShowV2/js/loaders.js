@@ -1,6 +1,13 @@
-import { showHolder, search } from "./dom.js";
+import { suggestions, showHolder, search } from "./dom.js";
+
 import { getJSON } from "./fetchers.js";
-import { displayMovie, renderError } from "./renderers.js";
+
+import {
+  displaySearchSuggestions,
+  displayMovie,
+  renderError,
+} from "./renderers.js";
+
 import {
   setTitle,
   setImage,
@@ -8,6 +15,7 @@ import {
   setSeasons,
   setCast,
 } from "./setters.js";
+
 export const loadResults = async function () {
   try {
     const data = await getJSON(
@@ -46,6 +54,35 @@ export const loadMovieDetails = async function (target) {
     setCast(castData);
   } catch (err) {
     showHolder.style.display = "none";
+    renderError(err);
+  }
+};
+
+export const loadSearchSuggestions = async function () {
+  try {
+    const suggestionsData = await getJSON(
+      `https://api.tvmaze.com/search/shows?q=${search.value}`
+    );
+
+    let list = suggestionsData.filter((movie) =>
+      movie.show.name.toLowerCase().includes(`${search.value.toLowerCase()}`)
+    );
+
+    if (search.value.length === 0 || list.length === 0) {
+      suggestions.classList.add("hidden");
+
+      suggestions.innerHTML = "";
+    } else if (search.value.length > 0 && list.length > 0) {
+      if (suggestions.classList.contains("hidden"))
+        suggestions.classList.remove("hidden");
+
+      suggestions.innerHTML = "";
+
+      list.forEach((movie, i) => {
+        if (i < 10) displaySearchSuggestions(movie);
+      });
+    }
+  } catch (err) {
     renderError(err);
   }
 };

@@ -1,16 +1,20 @@
 /*
 TO-DO
 1) responsive design of showPlaceholder
-2) search suggestions
 */
 
-import { search, showHolder, logo, container } from "./dom.js";
+import { suggestions, search, showHolder, logo, container } from "./dom.js";
 
-import { loadResults, loadMovieDetails } from "./loaders.js";
+import {
+  loadResults,
+  loadMovieDetails,
+  loadSearchSuggestions,
+} from "./loaders.js";
 
 import { setTitle } from "./setters.js";
 
 import {
+  clearSearchContent,
   toggleShowHolderDisplay,
   clearPageContent,
   clearShowContainerContent,
@@ -26,8 +30,12 @@ search.addEventListener("keydown", function (e) {
     clearShowContainerContent();
     if (!showHolder.classList.contains("hidden")) toggleShowHolderDisplay();
     loadResults();
-    search.value = "";
+    clearSearchContent();
   }
+});
+
+search.addEventListener("input", function () {
+  loadSearchSuggestions();
 });
 
 logo.addEventListener("click", function () {
@@ -48,4 +56,15 @@ container.addEventListener("click", function (e) {
   toggleShowHolderDisplay();
 
   loadMovieDetails(target);
+
+  clearSearchContent();
+});
+
+suggestions.addEventListener("click", function (e) {
+  let target = e.target.closest(".flex");
+  clearPageContent();
+  if (showHolder.classList.contains("hidden")) toggleShowHolderDisplay();
+  if (!showHolder.classList.contains("hidden")) clearShowContainerContent();
+  loadMovieDetails(target);
+  clearSearchContent();
 });
