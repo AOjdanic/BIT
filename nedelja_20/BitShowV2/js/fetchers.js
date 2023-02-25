@@ -7,7 +7,7 @@ export const getJSON = async function (url) {
     const data = await res.json();
     return data;
   } catch (err) {
-    setTimeout(() => location.reload(), 5000);
+    setTimeout(() => location.reload(), 2000);
     throw new Error(
       "⚠️ Bad request. There was an error fetching the data. Please try again 😊"
     );

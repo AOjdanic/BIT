@@ -21,9 +21,12 @@ export const loadResults = async function () {
     const data = await getJSON(
       `https://api.tvmaze.com/search/shows?q=${search.value}`
     );
+    if (data.length === 0)
+      throw new Error("⚠️ No shows with that name. Please try again 😊");
     data.forEach((obj) => displayMovie(obj));
   } catch (err) {
-    renderError(err);
+    setTimeout(() => location.reload(), 2000);
+    renderError(err.message);
   }
 };
 
