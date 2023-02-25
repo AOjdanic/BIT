@@ -41,6 +41,7 @@ search.addEventListener("input", function () {
 logo.addEventListener("click", function () {
   clearPageContent();
   clearShowContainerContent();
+  clearSearchContent();
   if (!showHolder.classList.contains("hidden")) toggleShowHolderDisplay();
   setTitle();
   fetchTop50();
