@@ -3,7 +3,6 @@
 /*
 TODO
 1)responsive design
-2)fix like button hover color
 */
 const body = document.querySelector("body");
 const container = document.querySelector(".cards__container");
@@ -71,7 +70,7 @@ const renderCharacterDetails = function (data) {
   <p>Location: ${data.location.name}</p>
   <p>Origin: ${data.origin.name}</p>
   <p>Species: ${data.species}</p>
-  <p>Type: ${data.type ? data.type : "Human"}</p>
+  <p>Type: ${data.type ? data.type : "unknown"}</p>
   <p>Status: ${data.status}</p>
   `;
   return html;
@@ -88,8 +87,10 @@ const showCharacterDetails = async function (target) {
 container.addEventListener("click", async function (e) {
   let target = e.target.closest(".card");
 
-  if (e.target.classList.contains("like-btn"))
-    target.querySelector(".like-btn").classList.toggle("filter");
+  if (e.target.classList.contains("like-btn")) {
+    target.querySelector(".like-btn").classList.toggle("btn-secondary");
+    target.querySelector(".like-btn").classList.toggle("btn-success");
+  }
 
   if (target === null || e.target.classList.contains("like-btn")) return;
 

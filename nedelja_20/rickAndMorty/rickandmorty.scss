@@ -11,7 +11,6 @@ body {
   background-size: cover;
   height: 100%;
   width: 100%;
-  //   position: relative;
 }
 
 html {
@@ -28,16 +27,35 @@ html {
 
 .cards__container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   padding-top: 50px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: auto auto;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    grid-template-columns: auto auto auto;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 .card {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
   button {
     border-style: none;
     border-radius: 10px;
@@ -52,6 +70,19 @@ html {
 }
 
 .my__modal {
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+    width: 80% !important;
+  }
+  @media screen and (min-width: 501px) and (max-width: 767px) {
+    width: 60%;
+    padding: 5%;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1440px) {
+    width: 40%;
+    padding: 5%;
+    max-width: 416px;
+  }
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -72,6 +103,7 @@ html {
     margin-bottom: 4%;
     border-radius: 10px;
     border: 5px solid black;
+    width: 70%;
   }
   h1 {
     font-weight: 700;
@@ -80,6 +112,9 @@ html {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
+    @media screen and (max-width: 1024px) {
+      font-size: 0.95rem;
+    }
   }
 }
 

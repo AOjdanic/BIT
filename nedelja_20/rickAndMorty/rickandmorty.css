@@ -26,15 +26,43 @@ html {
 
 .cards__container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   padding-top: 50px;
 }
+@media screen and (max-width: 767px) {
+  .cards__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .cards__container {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .cards__container {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cards__container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
 
+@media screen and (max-width: 767px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
 .card button {
   border-style: none;
   border-radius: 10px;
@@ -57,6 +85,24 @@ html {
   padding: 3%;
   z-index: 2;
 }
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .my__modal {
+    width: 80% !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 767px) {
+  .my__modal {
+    width: 60%;
+    padding: 5%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .my__modal {
+    width: 40%;
+    padding: 5%;
+    max-width: 416px;
+  }
+}
 
 .modal__content {
   display: flex;
@@ -68,6 +114,7 @@ html {
   margin-bottom: 4%;
   border-radius: 10px;
   border: 5px solid black;
+  width: 70%;
 }
 .modal__content h1 {
   font-weight: 700;
@@ -76,6 +123,11 @@ html {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .modal__content p {
+    font-size: 0.95rem;
+  }
 }
 
 .btn__close {
