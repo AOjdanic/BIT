@@ -2,7 +2,7 @@
 
 /*
 TODO
-1)responsive design
+1)modulation
 */
 const body = document.querySelector("body");
 const container = document.querySelector(".cards__container");
