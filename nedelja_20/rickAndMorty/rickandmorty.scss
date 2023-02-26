@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: url("https://images8.alphacoders.com/625/625910.png") no-repeat
+    center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  //   position: relative;
+}
+
+html {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.filter {
+  background-color: #197854;
+}
+
+.cards__container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding-top: 50px;
+}
+
+.card {
+  button {
+    border-style: none;
+    border-radius: 10px;
+  }
+
+  .like-btn {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+  }
+}
+
+.my__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 3%;
+  z-index: 2;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-bottom: 4%;
+    border-radius: 10px;
+    border: 5px solid black;
+  }
+  h1 {
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.btn__close {
+  border-style: none;
+  background-color: #fff;
+  font-size: 3rem;
+  position: absolute;
+  right: 3%;
+  top: 0%;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  backdrop-filter: blur(3px);
+}
