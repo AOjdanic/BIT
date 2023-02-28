@@ -27,6 +27,14 @@ body {
 
 .search {
   max-width: 300px;
+  width: 300px;
+  margin-right: 0px !important;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .title {
@@ -40,9 +48,9 @@ body {
 .search__suggestions {
   background-color: white;
   position: absolute;
-  top: 86%;
-  left: 63.2%;
-  width: 304px;
+  top: 100%;
+  right: 0%;
+  width: 300px;
   border-radius: 10px;
   z-index: 2;
   cursor: pointer;
@@ -88,6 +96,11 @@ body {
   justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 50px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    justify-content: center;
+  }
 }
 .container .card {
   animation-name: fadeIn;

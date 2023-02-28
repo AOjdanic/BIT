@@ -1,4 +1,6 @@
 .single_show_placeholder {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+  }
   animation-name: moveInFromBottom;
   animation-duration: 0.75s;
   width: 60%;
