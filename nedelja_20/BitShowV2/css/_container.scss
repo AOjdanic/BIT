@@ -6,8 +6,8 @@
   padding-top: 30px;
   padding-bottom: 50px;
   .card {
-    animation-name: moveInFromBottom;
-    animation-duration: 0.75s;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.5);
     display: inline-block;
     margin-bottom: 20px;
@@ -19,14 +19,12 @@
   }
 }
 
-@keyframes moveInFromBottom {
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
