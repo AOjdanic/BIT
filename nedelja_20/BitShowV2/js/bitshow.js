@@ -1,8 +1,3 @@
-/*
-TO-DO
-1) responsive design of showPlaceholder
-*/
-
 import { suggestions, search, showHolder, logo, container } from "./dom.js";
 
 import {
