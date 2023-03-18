@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.user-placeholder {
+  display: flex;
+  max-width: 120rem;
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+.user-placeholder:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.user-image {
+  border-radius: 50%;
+}
+.user-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+}
