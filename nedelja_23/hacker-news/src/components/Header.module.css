@@ -1,0 +1,10 @@
+.header {
+  height: 5rem;
+  background-color: #ea5421;
+  max-width: 120rem;
+  margin: 0 auto;
+  font-size: 3rem;
+  text-align: start;
+  padding: 0 2rem;
+  color: #fff;
+}
