@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  height: 55rem;
+  gap: 2.4rem;
+  justify-content: center;
+  margin: 10rem auto;
+  border-radius: 1.8rem;
+  border: 1px solid #000;
+}
+
+.form h2 {
+  font-size: 4.8rem;
+  color: #777;
+}
+
+.form input,
+.form button {
+  font-size: 2.4rem;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.form input {
+  background-color: #ddd;
+  border: none;
+  outline: none;
+}
+
+.login {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.reset {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #777;
+  cursor: pointer;
+}
