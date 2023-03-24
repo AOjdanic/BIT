@@ -1,0 +1,19 @@
+.search-icon {
+  height: 2rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #888;
+  margin: 1.6rem 0;
+}
+.search-bar {
+  width: 100%;
+  padding: 0.8rem;
+  outline-color: #4747ff;
+  border: 1px solid #5757ff;
+}
+.search-section {
+  margin-bottom: 4rem;
+}
