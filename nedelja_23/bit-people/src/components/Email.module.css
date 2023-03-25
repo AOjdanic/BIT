@@ -1,0 +1,9 @@
+.mail-holder {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+ion-icon[name="mail-sharp"] {
+  margin-top: 0.3rem;
+}

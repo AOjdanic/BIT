@@ -1,0 +1,24 @@
+.list-item {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid gray;
+  border-bottom: none;
+  padding: 0.8rem;
+}
+
+.list-item:last-child {
+  border: 1px solid gray;
+}
+
+.list-item img {
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+.list-item div {
+  text-align: start;
+}
+
+.list-item > * {
+  font-size: 1.3rem;
+}

@@ -1,0 +1,17 @@
+.footer {
+  background-color: #ee6e73;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+}
+
+.footer div {
+  display: flex;
+  justify-content: space-between;
+}
+.footer span {
+  color: #fff;
+  font-size: 1.8rem;
+  transform: translateY(50%);
+}

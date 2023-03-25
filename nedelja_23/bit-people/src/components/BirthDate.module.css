@@ -1,0 +1,9 @@
+.cake-icon {
+  height: 1.3rem;
+}
+
+.date-holder {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

@@ -1,0 +1,23 @@
+.search-holder {
+  display: flex;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.search-holder input {
+  font-size: 1.8rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  color: #aaa;
+  padding: 1rem;
+}
+
+.search-holder input::placeholder {
+  color: #bbb;
+}
+
+.search-holder ion-icon {
+  font-size: 2.4rem;
+}
