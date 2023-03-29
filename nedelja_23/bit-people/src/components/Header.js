@@ -2,11 +2,16 @@ import styles from "./Header.module.css";
 export default function Header(props) {
   const listHandler = () => {
     props.setIsList(true);
+    localStorage.removeItem("isList");
+    localStorage.setItem("isList", "1");
   };
   const gridHandler = () => {
     props.setIsList(false);
+    localStorage.removeItem("isList");
+    localStorage.setItem("isList", "0");
   };
   const refreshHandler = () => {
+    localStorage.removeItem("users");
     window.location.reload();
   };
   return (
