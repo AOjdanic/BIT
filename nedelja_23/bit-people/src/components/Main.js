@@ -4,7 +4,8 @@ import UserList from "./UserList";
 import UserListItem from "./UserListItem";
 import UserCards from "./UserCards";
 import UserCard from "./UserCard";
-import Loader from "./Loader";
+import Error from "./Error";
+
 export default function Main(props) {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
@@ -46,7 +47,6 @@ export default function Main(props) {
   return (
     <main>
       <div className="container">
-        {isLoading && <Loader />}
         {!isLoading && (
           <div className={styles["search-holder"]}>
             <ion-icon name="search-sharp"></ion-icon>
@@ -56,6 +56,25 @@ export default function Main(props) {
               onChange={inputHandler}
               type="text"
             />
+          </div>
+        )}
+        {!isLoading && !filterData.length === 0 && (
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              fontSize: "2rem",
+              justifyContent: "flex-end",
+              color: "#777",
+            }}
+          >
+            <p>
+              Male:{filterData.filter((user) => user.gender === "male").length}
+            </p>
+            <p>
+              Female:
+              {filterData.filter((user) => user.gender === "female").length}
+            </p>
           </div>
         )}
         {!isLoading && props.isList && (
@@ -74,6 +93,7 @@ export default function Main(props) {
               ))}
           </UserCards>
         )}
+        {!isLoading && filterData.length === 0 && <Error />}
       </div>
     </main>
   );

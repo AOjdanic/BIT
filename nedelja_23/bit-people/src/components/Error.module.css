@@ -1,0 +1,16 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 70rem;
+  margin: 0 auto;
+  gap: 2rem;
+  color: #777;
+}
+
+.error > ion-icon {
+  font-size: 10rem;
+}

@@ -14,12 +14,20 @@ export default function Header(props) {
     localStorage.removeItem("users");
     window.location.reload();
   };
+
+  const titleHandler = () => {
+    props.onAboutClick(false);
+  };
+
+  const aboutHandler = () => {
+    props.onAboutClick(true);
+  };
   return (
     <header className={styles.header}>
       <div className={`${styles.headContainer} container`}>
-        <h2>BIT People</h2>
+        <h2 onClick={titleHandler}>BIT People</h2>
         <ul className={styles.nav}>
-          <li>About</li>
+          <li onClick={aboutHandler}>About</li>
           <li onClick={refreshHandler}>
             <ion-icon name="refresh-outline"></ion-icon>
           </li>

@@ -1,0 +1,27 @@
+.about-title {
+  margin-top: 5rem;
+  font-size: 8rem;
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.about-second-title {
+  font-size: 6rem;
+  font-weight: 400;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  font-size: 1.5rem;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.paragraph:last-child {
+  padding-bottom: 20rem;
+}
+.about-section {
+  height: 87.3vh;
+}
