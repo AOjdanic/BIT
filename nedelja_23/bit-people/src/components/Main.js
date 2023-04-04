@@ -58,7 +58,7 @@ export default function Main(props) {
             />
           </div>
         )}
-        {!isLoading && !filterData.length === 0 && (
+        {!isLoading && filterData.length !== 0 && (
           <div
             style={{
               display: "flex",
