@@ -7,7 +7,7 @@ function MainNavigation() {
       <div className="container">
         <nav className={styles.navigation}>
           <div>
-            <h1>RND BLG</h1>
+            <h1>BIT BLOG</h1>
           </div>
           <ul className={styles.list}>
             <li>

@@ -1,0 +1,32 @@
+.singleauthor-wrap {
+  color: #ffffffde;
+  padding-top: 2.5rem;
+}
+.singleauthor-wrap > article > div {
+  width: 31rem;
+}
+
+.singleauthor-wrap > article {
+  display: flex;
+  justify-content: space-between;
+  height: 25rem;
+  border-bottom: 2px solid #ffffffde;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.img {
+  width: 100%;
+}
+.img-wrap {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.singleauthor-wrap > article > div > h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+.singleauthor-wrap > article > div > p {
+  font-size: 2.5rem;
+}

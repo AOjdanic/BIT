@@ -1,0 +1,20 @@
+.posts {
+  text-align: center;
+  margin: 5rem auto;
+  font-size: 3.5rem;
+  color: #ffffffde;
+}
+
+.new-post-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 10rem;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  border-radius: 1.2rem;
+  color: #fab833;
+  font-weight: 700;
+  background-color: #242424;
+  box-shadow: 0 2px 5px #ffffffde;
+  cursor: pointer;
+}
