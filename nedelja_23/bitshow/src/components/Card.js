@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./Card.module.css";
+import { useNavigate } from "react-router-dom";
 function Card({ movie }) {
+  let navigate = useNavigate();
+  const showMovie = (e) => {
+    let id = e.target.closest(`.${styles.card}`).dataset.id;
+    navigate(`/${id}`);
+  };
   return (
     <article
+      onClick={showMovie}
+      data-id={movie.id}
       className={
         movie.rating.average > 8.5
           ? `${styles.card} ${styles.popular}`

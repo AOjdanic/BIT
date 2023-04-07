@@ -1,0 +1,121 @@
+.movie-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5rem;
+}
+
+.movie-img-wrapper {
+  display: flex;
+  padding: 5rem;
+  padding-top: 2rem;
+  padding-left: 0;
+}
+
+.movie-img {
+  width: 100%;
+}
+
+.movie-details-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-title {
+  font-size: 5rem;
+  margin-bottom: 10rem;
+  color: #172554;
+}
+.movie-genre-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 0.2rem;
+}
+.movie-genre {
+  display: inline-block;
+  padding: 1rem;
+  background-color: #bfdbfe;
+  border-radius: 10rem;
+  font-size: 1.5rem;
+}
+
+.movie-description {
+  font-size: 2rem;
+  color: #172554;
+}
+
+.movie-cast-wrapper {
+  display: flex;
+  flex-direction: column;
+  grid-column: -3/-1;
+}
+.icons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+.icons-wrapper > * {
+  font-size: 3rem;
+  color: #172554;
+}
+
+.icons-wrapper h3 {
+  padding-left: 1rem;
+}
+.icons-wrapper:last-child {
+  display: inline-block;
+  padding-right: 2rem;
+}
+.icons-wrapper ion-icon {
+  cursor: pointer;
+}
+.movie-cast-display-div {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.cast-div {
+  position: relative;
+  width: 100%;
+}
+
+.cast-div img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.cast-div p {
+  position: absolute;
+  bottom: 0;
+  font-size: 3rem;
+  padding-left: 1rem;
+  padding-right: 9rem;
+  color: #eff6ff;
+}
+
+.movie-cast-display-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.movie-cast-display-list .cast-div {
+  display: flex;
+  height: 7rem;
+  border: 1px solid #172554;
+  border-bottom: none;
+  padding: 1rem;
+}
+.movie-cast-display-list .cast-div img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+.movie-cast-display-list .cast-div:last-child {
+  border-bottom: 1px solid #172554;
+}
+.movie-cast-display-list .cast-div p {
+  position: relative;
+  color: #172554;
+}
