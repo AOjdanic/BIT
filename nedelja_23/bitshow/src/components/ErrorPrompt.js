@@ -21,7 +21,7 @@ function Error() {
   return (
     <div className={styles.error}>
       {sadIcon}
-      <h1>We couldn't find any people matching your search</h1>
+      <h1>We couldn't find any shows matching your search</h1>
     </div>
   );
 }
