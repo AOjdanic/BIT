@@ -1,0 +1,28 @@
+.search-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.icon {
+  width: 2rem;
+  color: #172554;
+}
+.search {
+  width: 100%;
+  border: none;
+  background-color: #eff6ff;
+  color: #172554;
+  font-size: 2rem;
+  border-bottom: 1px solid #172554;
+  outline: none;
+}
+.search::placeholder {
+  color: #a8b0cc;
+}
+
+/* background-color: #172554;
+color: #eff6ff; */

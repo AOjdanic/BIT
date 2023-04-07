@@ -1,0 +1,57 @@
+.card {
+  width: 30rem;
+  border: 1px solid #172554;
+  background-color: #eff6ff;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 9px #172554;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2%);
+}
+.img-wrap {
+  overflow: hidden;
+  height: 90%;
+}
+.card-img {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card-img:hover {
+  transform: scale(1.2);
+}
+.title-wrap {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 1rem;
+}
+.title {
+  font-size: 2rem;
+  color: #172554;
+}
+
+.rating {
+  position: absolute;
+  background-color: #172554;
+  color: #eff6ff;
+  font-size: 2rem;
+  top: 83%;
+  left: 75%;
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; */
+  border-radius: 50%;
+}
+
+.popular {
+  background-color: #facc15;
+}

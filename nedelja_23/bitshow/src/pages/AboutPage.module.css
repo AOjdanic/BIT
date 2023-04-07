@@ -1,0 +1,15 @@
+.about-wrap {
+  font-size: 3.5rem;
+  margin-bottom: 10.1rem;
+  margin-top: 10rem;
+  color: #172554;
+}
+.about-wrap > h3 {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.about-wrap > p {
+  font-size: 3rem;
+  /* max-width: 80rem; */
+  margin: 0 auto;
+}
